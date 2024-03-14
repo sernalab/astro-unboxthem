@@ -4,6 +4,8 @@ import tailwind from '@astrojs/tailwind'
 import compress from 'astro-compress'
 import icon from 'astro-icon'
 
+import netlify from '@astrojs/netlify'
+
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
@@ -15,4 +17,6 @@ export default defineConfig({
     }),
     compress(),
   ],
+  output: 'server',
+  adapter: netlify(),
 })
